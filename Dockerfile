@@ -12,6 +12,8 @@ dnf -y upgrade \
 dnf install -y \
     bison \
     cmake3 \
+    cmake \
+    make \
     file \
     flex \
     gcc-c++ \
