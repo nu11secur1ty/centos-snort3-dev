@@ -30,10 +30,9 @@ yum -y install \
     gdb \
     git \
     lcov \
-    vim \
-&& \
+    vim 
 # Clean out the Yum cache
-yum -y clean all
+RUN yum -y clean all
 
 # Add CMake3 to alternatives for cmake
 RUN alternatives --install /usr/bin/cmake cmake /usr/bin/cmake3 10
