@@ -9,7 +9,7 @@ RUN dnf -y install epel-release && \
 # Update the image's pre-installed packages
 dnf -y upgrade \
 # Install the Snort build dependencies
-dnf install -y \
+dnf -y install && \
     bison \
     cmake3 \
     file \
