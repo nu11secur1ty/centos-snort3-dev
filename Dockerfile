@@ -1,4 +1,4 @@
-FROM centos:8
+FROM centos:7
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
 # Add /usr/local/lib and /usr/local/lib64 to the ldconfig caching paths
