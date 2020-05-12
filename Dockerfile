@@ -45,7 +45,8 @@ RUN dnf -y groupinstall "Development Tools" && \
     libxml2-devel \
     numactl-devel \
     python3 \
-    xz-devel
+    xz-devel \
+    wget
 # Clean out the Yum cache
 RUN dnf clean all
 
