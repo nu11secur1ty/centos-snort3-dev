@@ -4,13 +4,12 @@ MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 # Add /usr/local/lib and /usr/local/lib64 to the ldconfig caching paths
 ADD ldconfig-local.conf /etc/ld.so.conf.d/local.conf
 
-RUN \
 # Enable EPEL for access to updated packages
-dnf -y install epel-release && \
+RUN dnf install -y epel-release && \
 # Update the image's pre-installed packages
-dnf -y upgrade && \
+dnf upgrade -y \
 # Install the Snort build dependencies
-dnf -y install \
+dnf install -y \
     bison \
     cmake3 \
     file \
