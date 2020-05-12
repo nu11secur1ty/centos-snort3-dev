@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:8
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
 # Add /usr/local/lib and /usr/local/lib64 to the ldconfig caching paths
@@ -26,6 +26,8 @@ yum -y install \
     pcre-devel \
     ragel \
     xz-devel \
+    wget \
+    curl \
 # Install the Snort developer requirements
     gdb \
     git \
