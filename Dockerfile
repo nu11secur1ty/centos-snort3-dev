@@ -9,7 +9,6 @@ RUN dnf -y install epel-release && \
 # Update the image's pre-installed packages
 dnf -y upgrade && \
 # Installing tools
-dnf -y groupinstall "Development Tools" && \
 dnf -y install \
        cmake \
        fribidi-devel \
@@ -46,6 +45,7 @@ dnf -y install \
     lcov \
     vim 
 # Clean out the Yum cache
+RUN dnf -y groupinstall "Development Tools" 
 RUN dnf clean all
 
 # Add CMake3 to alternatives for cmake
