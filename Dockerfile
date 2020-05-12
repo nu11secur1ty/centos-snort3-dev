@@ -9,7 +9,29 @@ RUN dnf -y install epel-release && \
 # Update the image's pre-installed packages
 dnf -y upgrade && \
 # Installing tools
-dnf -y groupinstall "Development Tools"
+dnf -y groupinstall "Development Tools" \
+       cmake \
+       fribidi-devel \
+       git \
+       jansson-devel \
+       libxml2-devel \
+       numactl-devel \
+       python3 \
+       xz-devel \
+# Enable Power tools
+dnf -y config-manager --set-enabled PowerTools \
+        lame-devel \
+        libogg-devel \
+        libsamplerate-devel \
+        libtheora-devel \
+        libvorbis-devel \
+        libvpx-devel \
+        meson \
+        nasm 
+        ninja-build \
+        opus-devel \
+        speex-devel
+
 # Install the Snort build dependencies
 dnf install -y \
     bison \
