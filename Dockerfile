@@ -6,11 +6,11 @@ ADD ldconfig-local.conf /etc/ld.so.conf.d/local.conf
 
 RUN \
 # Enable EPEL for access to updated packages
-yum install -y epel-release && \
+dnf -y install epel-release && \
 # Update the image's pre-installed packages
-yum upgrade -y && \
+dnf -y upgrade && \
 # Install the Snort build dependencies
-yum install -y \
+dnf -y install \
     bison \
     cmake3 \
     file \
@@ -34,7 +34,7 @@ yum install -y \
     lcov \
     vim 
 # Clean out the Yum cache
-RUN yum clean all
+RUN dnf clean all
 
 # Add CMake3 to alternatives for cmake
 RUN alternatives --install /usr/bin/cmake cmake /usr/bin/cmake3 10
