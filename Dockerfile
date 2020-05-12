@@ -7,7 +7,7 @@ ADD ldconfig-local.conf /etc/ld.so.conf.d/local.conf
 # Enable EPEL for access to updated packages
 RUN dnf -y install epel-release && \
 # Update the image's pre-installed packages
-dnf -y upgrade && \
+dnf -y upgrade \
 # Install the Snort build dependencies
 dnf install -y \
     bison \
