@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
 # Add /usr/local/lib and /usr/local/lib64 to the ldconfig caching paths
@@ -6,11 +6,11 @@ ADD ldconfig-local.conf /etc/ld.so.conf.d/local.conf
 
 RUN \
 # Enable EPEL for access to updated packages
-yum -y install epel-release && \
+yum install -y epel-release && \
 # Update the image's pre-installed packages
-yum -y upgrade && \
+yum upgrade -y && \
 # Install the Snort build dependencies
-yum -y install \
+yum install -y \
     bison \
     cmake3 \
     file \
@@ -34,7 +34,7 @@ yum -y install \
     lcov \
     vim 
 # Clean out the Yum cache
-RUN yum -y clean all
+RUN yum clean all
 
 # Add CMake3 to alternatives for cmake
 RUN alternatives --install /usr/bin/cmake cmake /usr/bin/cmake3 10
