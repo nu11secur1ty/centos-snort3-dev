@@ -16,9 +16,9 @@ cmake -DC++11=ON ..
 make -j$(nproc) install
 
 cd $HOME
-curl -LO https://snort.org/downloads/snortplus/daq-2.2.2.tar.gz
-tar xf daq-2.2.2.tar.gz
-cd daq-2.2.2
+curl -LO https://snort.org/downloads/snortplus/daq-3.0.0-alpha5.tar.gz
+tar xf daq-3.0.0-alpha5.tar.gz
+cd daq-3.0.0
 ./configure
 make install
 ldconfig
