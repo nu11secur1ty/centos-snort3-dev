@@ -27,6 +27,7 @@ dnf install -y \
     xz-devel \
     wget \
     curl \
+    git \
 # Install the Snort developer requirements
     gdb \
     git \
