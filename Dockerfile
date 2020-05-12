@@ -7,18 +7,9 @@ ADD ldconfig-local.conf /etc/ld.so.conf.d/local.conf
 # Enable EPEL for access to updated packages
 RUN dnf -y install epel-release && \
 # Update the image's pre-installed packages
-dnf -y upgrade && \
-# Installing tools
-dnf -y install \
-       cmake \
-       fribidi-devel \
-       git \
-       jansson-devel \
-       libxml2-devel \
-       numactl-devel \
-       python3 \
-       xz-devel \
+dnf -y upgrade \
 # Install the Snort build dependencies
+dnf install -y \
     bison \
     cmake3 \
     cmake \
@@ -44,8 +35,18 @@ dnf -y install \
     git \
     lcov \
     vim 
+# Install dependencies
+RUN dnf -y groupinstall "Development Tools" && \
+    dnf -y install \
+    cmake \
+    fribidi-devel \
+    git \
+    jansson-devel \
+    libxml2-devel \
+    numactl-devel \
+    python3 \
+    xz-devel
 # Clean out the Yum cache
-RUN dnf -y groupinstall "Development Tools" 
 RUN dnf clean all
 
 # Add CMake3 to alternatives for cmake
