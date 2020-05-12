@@ -20,6 +20,18 @@ cmake -DC++11=ON ..
 make -j$(nproc) install
 
 cd $HOME
+wget http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.7.7.tar.gz
+dnf -y install install graphviz
+tar -xzf openfst-1.7.7.tar.gz
+cd openfst-1.7.7
+./configure --enable-far=true
+make -j1
+make install
+echo "export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib" >> ~/.bashrc
+source ~/.bashrc
+fstinfo --help
+
+cd $HOME
 curl -LO https://snort.org/downloads/snortplus/daq-3.0.0-alpha5.tar.gz
 tar xf daq-3.0.0-alpha5.tar.gz
 cd daq-3.0.0
