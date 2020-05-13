@@ -3,7 +3,7 @@
 Snort++ build quick start (inside the container) with unit test support:
 
 
-- - - Run docker
+- Run docker
 
 ```bash
 docker run -t -i nu11secur1ty/centos-snort3-dev /bin/bash
